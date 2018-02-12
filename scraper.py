@@ -18,7 +18,8 @@ urls = [
 
 sections = []
 
-startSection = 438
+# Set this if you need to restart from a specific image index after a failed/aborted run
+startSectionIndex = 0
 
 # Get all image sections
 for url in urls:
@@ -35,7 +36,7 @@ print('FOUND ' + str(len(sections)) + ' TRILOBITES...\n\n')
 
 # Parse each section to download image
 for idx, section in enumerate(sections):
-    if idx < startSection:
+    if idx < startSectionIndex:
         continue
 
     # Get trilobite name from header
